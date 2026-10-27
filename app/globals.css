@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: 'Space Grotesk';
+  --font-sans: 'Inter';
+}
+
+* { border-color: rgba(255,255,255,0.08); }
+html { scroll-behavior: smooth; }
+body { background: #0A0A0F; }
+::selection { background: rgba(168,85,247,0.35); color: #F5F5FA; }
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #0A0A0F; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #A855F7, #F472B6);
+  border-radius: 999px;
+  border: 2px solid #0A0A0F;
+}
+
+@layer components {
+  .glass { @apply rounded-2xl border border-border bg-surface/60 backdrop-blur-xl; }
+  .glass-hover { @apply transition-all duration-300 hover:border-white/20 hover:bg-surface-2/80; }
+  .text-gradient { @apply bg-gradient-primary bg-clip-text text-transparent; }
+  .btn-primary { @apply inline-flex items-center justify-center gap-2 rounded-full bg-gradient-primary px-6 py-3 text-sm font-semibold text-base shadow-glow transition-all duration-300 hover:scale-[1.03] hover:shadow-glow-pink active:scale-[0.98]; }
+  .btn-ghost { @apply inline-flex items-center justify-center gap-2 rounded-full border border-border bg-surface/50 px-6 py-3 text-sm font-semibold text-text-primary backdrop-blur-xl transition-all duration-300 hover:border-white/25 hover:bg-surface-2/80; }
+}
+
+@keyframes fade-up {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.fade-up   { animation: fade-up 0.7s ease-out both; }
+.fade-up-1 { animation: fade-up 0.7s 0.1s ease-out both; }
+.fade-up-2 { animation: fade-up 0.7s 0.2s ease-out both; }
+.fade-up-3 { animation: fade-up 0.7s 0.3s ease-out both; }
+.fade-up-4 { animation: fade-up 0.7s 0.4s ease-out both; }
